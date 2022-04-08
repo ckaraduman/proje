@@ -126,4 +126,25 @@ class PageController extends Controller
       // return view("update");
     }
 
+    public function DataUpdate(Request $request)
+    {
+        $validatedData=$request->validate([ //formu güvenlik amacıyla kontrol etmek için kullanılan fonksiyondur
+          'book_name' => 'required', //kitap adı alanı boş ise formu kabul etmez
+          'author' => 'required', //yazar alanı boş ise formu kabul etmez
+          'pagenum' => 'required' //chechbox seçilmemişse kabul etmez
+        ]);
+
+        // return $request->all(); //Formdan gönderilen tüm değerleri alıp ekrana yazar
+        // DB::table('books')->insert([
+        //   'book_name'=>$request->book_name,
+        //   'author'=>$request->author,
+        //   'pagenum'=>$request->pagenum
+        // ]);
+
+        return back()->with('status', 'Kayıt işlemi başarıyla tamamlandı!');
+
+
+    }
+
+
 }

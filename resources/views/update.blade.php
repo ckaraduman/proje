@@ -19,7 +19,7 @@
     </ul>
   @endif
   <!-- Hata yakalama kısmı-end -->
-  <form action="{{route('DataInsert')}}" method="post"><br>
+  <form action="{{route('DataUpdate')}}" method="post"><br>
   @csrf
   <input type="text" class="form-control" placeholder="Kitap Adı" name="book_name" value="{{$data1->book_name}}"><br>
   <input type="text" class="form-control" placeholder="Yazar" name="author" value="{{$data1->author}}"><br>

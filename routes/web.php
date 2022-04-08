@@ -22,6 +22,7 @@ Route::get('/show/{ad}', [PageController::class, 'show']);
 
 Route::get('/insert', [PageController::class, 'insert'])->name('insert');
 Route::get('/update/{id}', [PageController::class, 'update'])->name('update');
+Route::post('/DataUpdate', [PageController::class, 'DataUpdate'])->name('DataUpdate');
 
 // Route::match(['get', 'post'],'/test','App\Http\Controllers\PageController@test')->name('test');
 //
