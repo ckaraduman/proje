@@ -1,7 +1,7 @@
 @extends('layouts.temp')
 @section('title','CIKaraduman')
 @section('content')
-<!--Deneme-update için yazıldı, işlevi yoktur.
+
 <div class="container mt-4">
   <div class="col-md-6">
 <h1>Kitap Kayıt Formu</h1>

@@ -118,7 +118,7 @@ class PageController extends Controller
 
     public function update()
     {
-  
+      return view("update");
     }
 
 }
