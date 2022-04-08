@@ -21,7 +21,7 @@ Route::get('/show/{ad}', [PageController::class, 'show']);
 // Route::match(['get', 'post'],'/insert','App\Http\Controllers\PageController@insert')->name('insert');
 
 Route::get('/insert', [PageController::class, 'insert'])->name('insert');
-Route::get('/update', [PageController::class, 'update'])->name('update');
+Route::get('/update/{id}', [PageController::class, 'update'])->name('update');
 
 // Route::match(['get', 'post'],'/test','App\Http\Controllers\PageController@test')->name('test');
 //

@@ -116,9 +116,14 @@ class PageController extends Controller
 
     }
 
-    public function update()
+    public function update($id)
     {
-      return view("update");
+      $data1=DB::table('books')
+      ->where('id',$id)
+      ->first();
+      return view('update',compact('data1'));
+      // return $id;
+      // return view("update");
     }
 
 }

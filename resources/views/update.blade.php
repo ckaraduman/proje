@@ -21,9 +21,9 @@
   <!-- Hata yakalama kısmı-end -->
   <form action="{{route('DataInsert')}}" method="post"><br>
   @csrf
-  <input type="text" class="form-control" placeholder="Kitap Adı" name="book_name"><br>
-  <input type="text" class="form-control" placeholder="Yazar" name="author"><br>
-  <input type="number" class="form-control" placeholder="Sayfa Sayısı" name="pagenum"><br>
+  <input type="text" class="form-control" placeholder="Kitap Adı" name="book_name" value="{{$data1->book_name}}"><br>
+  <input type="text" class="form-control" placeholder="Yazar" name="author" value="{{$data1->author}}"><br>
+  <input type="number" class="form-control" placeholder="Sayfa Sayısı" name="pagenum" value="{{$data1->pagenum}}"><br>
   <!-- <p>Bu form Cem İlker Karaduman tarafından test amaçlı 15 Mart 2022 tarihinde oluşturulmuştur.</p><br>
   <input type="checkbox" name="check1" class="form-check-input" id="check1" > -->
   <!-- <label for="check1" class="form-check-label">Okudum, Onaylıyorum</label><br><br> -->

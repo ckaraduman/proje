@@ -21,6 +21,7 @@
   <thead>
     <tr>
       <th scope="col">#</th>
+      <th scope="col">Id</th>
       <th scope="col">Book Name</th>
       <th scope="col">Author</th>
       <th scope="col">PageNum</th>
@@ -33,10 +34,11 @@
     <tr>
       <!-- <th scope="row">{{$key->id}}</th> -->
       <td>{{$loop->iteration}}</td>
+      <td>{{$key->id}}</td>
       <td>{{$key->book_name}}</td>
       <td>{{$key->author}}</td>
       <td>{{$key->pagenum}}</td>
-      <td width="10"><a href="{{route('update')}}"><button class="btn btn-primary">Düzenle</button></a></td>
+      <td width="10"><a href="{{route('update',['id'=>$key->id])}}"><button class="btn btn-primary">Düzenle</button></a></td>
       <td width="10"><a href="#"></a><button class="btn btn-primary">Sil</button></td>
     </tr>
     @endforeach
