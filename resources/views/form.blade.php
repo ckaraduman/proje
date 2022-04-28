@@ -5,6 +5,9 @@
 <div class="container mt-4">
   <div class="col-md-6">
 <h1>Kitap Kayıt Formu</h1>
+<div align="right">
+  <a href="{{route('list')}}"><button class="btn btn-success">Geri</button></a>
+</div>
   <hr>
   @if (session()->has('status'))
   <div class="alert alert-success">

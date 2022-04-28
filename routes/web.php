@@ -22,10 +22,12 @@ Route::get('/show/{ad}', [PageController::class, 'show']);
 
 Route::get('/insert', [PageController::class, 'insert'])->name('insert');
 Route::get('/update/{id}', [PageController::class, 'update'])->name('update');
-Route::post('/DataUpdate', [PageController::class, 'DataUpdate'])->name('DataUpdate');
+Route::get('/delete/{id}', [PageController::class, 'delete'])->name('delete');
+Route::post('/DataUpdate/{id}', [PageController::class, 'DataUpdate'])->name('DataUpdate');
 
 // Route::match(['get', 'post'],'/test','App\Http\Controllers\PageController@test')->name('test');
 //
 // Route::get('/cem', [PageController::class, 'insert']);
 
 Route::post('/DataInsert', [PageController::class, 'DataInsert'])->name('DataInsert');
+Route::get('/test1', [PageController::class, 'test1'])->name('test1');

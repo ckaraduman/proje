@@ -85,6 +85,11 @@ class PageController extends Controller
         return view('form');
     }
 
+    public function test1()
+    {
+        return view('test1');
+    }
+
     public function DataInsert(Request $request)
     {
         $validatedData=$request->validate([ //formu güvenlik amacıyla kontrol etmek için kullanılan fonksiyondur
@@ -126,7 +131,7 @@ class PageController extends Controller
       // return view("update");
     }
 
-    public function DataUpdate(Request $request)
+    public function DataUpdate(Request $request, $id)
     {
         $validatedData=$request->validate([ //formu güvenlik amacıyla kontrol etmek için kullanılan fonksiyondur
           'book_name' => 'required', //kitap adı alanı boş ise formu kabul etmez
@@ -135,16 +140,23 @@ class PageController extends Controller
         ]);
 
         // return $request->all(); //Formdan gönderilen tüm değerleri alıp ekrana yazar
-        // DB::table('books')->insert([
-        //   'book_name'=>$request->book_name,
-        //   'author'=>$request->author,
-        //   'pagenum'=>$request->pagenum
-        // ]);
 
-        return back()->with('status', 'Kayıt işlemi başarıyla tamamlandı!');
+        DB::table('books')
+        ->where('id',$id)
+        ->update([
+          'book_name'=>$request->book_name,
+          'author'=>$request->author,
+          'pagenum'=>$request->pagenum
+        ]);
 
-
+        return back()->with('status', 'Güncelleme işlemi başarıyla tamamlandı!');
     }
 
-
+    public function delete($id)
+    {
+      DB::table('books')
+      ->where('id',$id)
+      ->delete();
+      return back();
+    }
 }

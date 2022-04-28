@@ -39,7 +39,7 @@
       <td>{{$key->author}}</td>
       <td>{{$key->pagenum}}</td>
       <td width="10"><a href="{{route('update',['id'=>$key->id])}}"><button class="btn btn-primary">Düzenle</button></a></td>
-      <td width="10"><a href="#"></a><button class="btn btn-primary">Sil</button></td>
+      <td width="10"><a href="{{route('delete',['id'=>$key->id])}}"><button class="btn btn-primary">Sil</button></a></td>
     </tr>
     @endforeach
   </tbody>
