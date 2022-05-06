@@ -4,7 +4,7 @@
 <div class="container mt-4">
 <h1>Book List</h1>
 <div align="right">
-  <a href="{{route('insert')}}"><button class="btn btn-success">Yeni Ekle</button></a>
+  <a href="{{route('insert')}}"><button class="btn btn-success">Yeni Ekle</button></a>   <a href="{{route('main')}}"><button class="btn btn-success">Ana Menü</button></a>
 </div>
   <hr>
   <!-- Hata yakalama kısmı-start -->

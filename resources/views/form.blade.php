@@ -6,7 +6,7 @@
   <div class="col-md-6">
 <h1>Kitap Kayıt Formu</h1>
 <div align="right">
-  <a href="{{route('list')}}"><button class="btn btn-success">Geri</button></a>
+  <a href="{{route('list')}}"><button class="btn btn-success">Geri</button></a>   <a href="{{route('main')}}"><button class="btn btn-success">Ana Menü</button></a>
 </div>
   <hr>
   @if (session()->has('status'))
@@ -28,9 +28,6 @@
   <input type="text" class="form-control" placeholder="Kitap Adı" name="book_name"><br>
   <input type="text" class="form-control" placeholder="Yazar" name="author"><br>
   <input type="number" class="form-control" placeholder="Sayfa Sayısı" name="pagenum"><br>
-  <!-- <p>Bu form Cem İlker Karaduman tarafından test amaçlı 15 Mart 2022 tarihinde oluşturulmuştur.</p><br>
-  <input type="checkbox" name="check1" class="form-check-input" id="check1" > -->
-  <!-- <label for="check1" class="form-check-label">Okudum, Onaylıyorum</label><br><br> -->
   <input type="submit" value="Kitap Ekle">
   </form>
   </div>

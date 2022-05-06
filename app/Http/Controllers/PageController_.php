@@ -14,6 +14,62 @@ use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
 {
+    public function index()
+    {
+        echo "Deneme route index fonksiyonu çalıştı!";
+    }
+
+    public function data()
+    {
+        // $data=DB::table('books')->get(); //tüm verileri alır
+
+        // $data=DB::table('books')            // şartı sağlayan veriyi çeker1
+        // ->where('author', 'Zülfü Livaneli') // şartı sağlayan veriyi çeker2
+
+        // ->get();
+        // dd($data);
+
+        // $data=DB::table('books')->first(); //sadece ilk kayıt değerini alır
+        // echo $data->book_name;
+
+        // $data=DB::table('books')->pluck('book_name'); //belirtilen sütunun tüm kayıtlardaki değerlerini alır1
+        // dd($data);                                    //belirtilen sütunun tüm kayıtlardaki değerlerini görüntüler2
+
+        // $data=DB::table('books')->count(); //kayıt sayısını bulur
+        // echo $data;
+
+        // $data=DB::table('books')->insert(    //tabloya VERİ EKLEME
+        //     [
+        //       'book_name'=>'Laravel 6',
+        //       'author'=>'Emrah Yüksel',
+        //       'nop'=>166
+        //     ]);
+        // echo $data;
+
+        // $data=DB::table('books')    //Veri güncelleme
+        //       ->where('author', 'Jules Verne') //Veri güncelleme
+        //       ->update( //Veri güncelleme
+        //     [
+        //       'book_name'=>'Aya Seyahat', //Veri güncelleme
+        //       'nop'=>285 //Veri güncelleme
+        //     ]); //Veri güncelleme
+        // echo $data; //Veri güncelleme
+
+        // $data=DB::table('books')    //Veri silme
+        //       ->where('author', 'Enid Blyton') //Veri silme
+        //       ->delete(); //veri silme
+        //
+        // $data=DB::table('books')    //Tabloyu KOMPLE BOŞALTMA
+        //             ->truncate(); //Tabloyu KOMPLE BOŞALTIR...
+
+        // echo "Tablo route data fonksiyonu çalıştı!"; // Kontrol satırı
+    }
+
+    public function show($ad)
+    {
+        echo "Deneme route show fonksiyonu parametreli çalıştı!".$ad;
+    }
+
     public function list()
     {
         $data=DB::table('books') //Listelemek için gereken satır1
@@ -29,10 +85,11 @@ class PageController extends Controller
         return view('form');
     }
 
-    public function main()
+    public function test1()
     {
-        return view('main');
+        return view('test1');
     }
+
     public function DataInsert(Request $request)
     {
         $validatedData=$request->validate([ //formu güvenlik amacıyla kontrol etmek için kullanılan fonksiyondur
@@ -49,6 +106,19 @@ class PageController extends Controller
         ]);
 
         return back()->with('status', 'Kayıt işlemi başarıyla tamamlandı!');
+
+
+
+        //Çalışan Kodlar111-start
+        // echo $request->book_name;
+        // echo "<br>";
+        // echo $request->author;
+        // echo "<br>";
+        // echo "bu iş tamamdır!";
+        // dd($request);
+        //Çalışan Kodlar111-end
+        // return view('test');
+
     }
 
     public function update($id)
@@ -57,6 +127,8 @@ class PageController extends Controller
       ->where('id',$id)
       ->first();
       return view('update',compact('data1'));
+      // return $id;
+      // return view("update");
     }
 
     public function DataUpdate(Request $request, $id)
